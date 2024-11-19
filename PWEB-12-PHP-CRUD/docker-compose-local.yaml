@@ -1,0 +1,17 @@
+services:
+  php-database:
+    container_name: php-database
+    build:
+      context: .
+      dockerfile: ./Dockerfile/Dockerfile.database
+    env_file:
+      - .env
+    ports:
+      - "8081:3306"
+    networks:
+      - php-network
+
+networks:
+  php-network:
+    name: 'php-network'
+    driver: bridge
