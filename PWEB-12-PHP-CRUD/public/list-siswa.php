@@ -134,34 +134,6 @@
                 Total : <?php echo mysqli_num_rows($query)?>
                 </div>
             </div>
-
-            <?php if(isset($_GET['delete']) && $_GET['delete'] == 'succees'): ?>
-            <div class="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl bg-green-400 text-white font-bold p-4 text-center rounded-md mt-4 mb-4 ">
-                Delete data success!
-            </div>
-            <?php elseif(isset($_GET['delete']) && $_GET['delete'] == 'fail'): ?>
-            <div class="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl bg-red-400 text-white font-bold p-4 text-center rounded-md mt-4 mb-4 ">
-                Delete data gagal!
-            </div>
-            <?php elseif(isset($_GET['delete']) && $_GET['delete'] == 'invalid'): ?>
-            <div class="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl bg-red-600 text-white font-bold p-4 text-center rounded-md mt-4 mb-4 ">
-                Input yang diberikan tidak valid!
-            </div>
-            <?php endif; ?>
-
-            <?php if(isset($_GET['update']) && $_GET['update'] == 'success'): ?>
-            <div class="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl bg-green-400 text-white font-bold p-4 text-center rounded-md mt-4 mb-4 ">
-                Update data success!
-            </div>
-            <?php elseif(isset($_GET['update']) && $_GET['update'] == 'fail'): ?>
-            <div class="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl bg-red-400 text-white font-bold p-4 text-center rounded-md mt-4 mb-4 ">
-                Update data gagal!
-            </div>
-            <?php elseif(isset($_GET['update']) && $_GET['update'] == 'invalid'): ?>
-            <div class="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl bg-red-600 text-white font-bold p-4 text-center rounded-md mt-4 mb-4 ">
-                Input yang diberikan tidak valid!
-            </div>
-            <?php endif; ?>
         </main>
     </body>
 </html>

@@ -9,15 +9,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $agama = htmlspecialchars(trim($_POST["agama"]));
     $alamat = htmlspecialchars(trim($_POST["alamat"]));
     $sekolah_asal = htmlspecialchars(trim($_POST["sekolah_asal"]));
-    $pendaftar_id = htmlspecialchars(trim($_POST["pendaftar_id"]));
+    $petugas_id = htmlspecialchars(trim($_POST["petugas_id"]));
 
-    if(empty($nama) || empty($jenis_kelamin) || empty($agama) || empty($alamat) || empty($sekolah_asal) || empty($pendaftar_id))
+    if(empty($nama) || empty($jenis_kelamin) || empty($agama) || empty($alamat) || empty($sekolah_asal) || empty($petugas_id))
     {
         header("Location: index.php?update=invalid");
     }
     else
     {
-        $sql = "UPDATE calon_siswa SET nama='$nama', jenis_kelamin='$jenis_kelamin', agama='$agama', alamat='$alamat', sekolah_asal='$sekolah_asal, pegawai_pendaftar_id='$pendaftar_id' WHERE id=$id;";
+        $sql = "UPDATE calon_siswa SET nama='$nama', jenis_kelamin='$jenis_kelamin', agama='$agama', alamat='$alamat', sekolah_asal='$sekolah_asal', pegawai_pendaftar_id='$petugas_id' WHERE id=$id;";
         $query = mysqli_query($db, $sql);
 
         if($query)
