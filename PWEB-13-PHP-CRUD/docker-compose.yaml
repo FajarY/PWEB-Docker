@@ -1,0 +1,41 @@
+services:
+  php-app:
+    container_name: php-app
+    build:
+      context: .
+      dockerfile: ./Dockerfile/Dockerfile.app
+    env_file:
+      - .env
+    ports:
+      - "8080:80"
+    networks:
+      - php-network
+    develop:
+      watch:
+        - action : sync
+          path : ./public
+          target : /var/www/php-website
+        - action : sync+restart
+          path : ./nginx.conf
+          target : /etc/nginx/nginx.conf
+
+  php-database:
+    container_name: php-database
+    build:
+      context: .
+      dockerfile: ./Dockerfile/Dockerfile.database
+    env_file:
+      - .env
+    ports:
+      - "8081:3306"
+    networks:
+      - php-network
+    develop:
+      watch:
+        - action : rebuild
+          path : ./wait_for_database.sh
+
+networks:
+  php-network:
+    name: 'php-network'
+    driver: bridge
