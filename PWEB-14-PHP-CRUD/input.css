@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.table-siswa
+{
+    @apply p-2 text-center;
+    thead
+    {
+        @apply border-2;
+        th
+        {
+            @apply p-2 border-2;
+        }
+    }
+    tbody
+    {
+        @apply border-2;
+        tr
+        {
+
+            @apply border-2;
+            td
+            {
+                @apply border-2 p-2;
+            }
+        }
+    }
+}
